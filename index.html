@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="animated-bg"></div>
+    <div class="light-overlay"></div>
+    <div class="container">
+      <header class="header">
+        <h1 class="logo">
+          <i class="fa-solid fa-cloud-sun"></i>
+          Weather Dashboard
+        </h1>
+        <div class="search-box">
+          <input type="text" placeholder="Enter city name..." id="city-input" />
+          <button id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="left-panel">
+          <div class="weather-card">
+            <h2 class="city-name" id="city-name">
+              <i class="fa-solid fa-location-dot"></i>
+              Mumbai
+            </h2>
+            <p class="date" id="current-date">Monday, 1 June</p>
+            <div class="weather-icon">
+              <i class="fa-solid fa-cloud-sun" id="weather-icon"></i>
+            </div>
+            <h1 class="temperature" id="temperature">29°C</h1>
+            <p class="weather-condition" id="weather-condition">
+              Partly Cloudy
+            </p>
+          </div>
+
+          <div class="weekly-forecast">
+            <h2 class="section-title">
+              <i class="fa-solid fa-calendar-days"></i>
+              7-Day Forecast
+            </h2>
+            <div class="weekly-container" id="weekly-container"></div>
+          </div>
+        </section>
+
+        <section class="right-panel">
+          <div class="hourly-forecast">
+            <h2 class="section-title">
+              <i class="fa-solid fa-clock"></i>
+              Hourly Forecast
+            </h2>
+            <div class="forecast-container" id="forecast-container"></div>
+          </div>
+
+          <div class="highlights">
+            <h2 class="section-title">
+              <i class="fa-solid fa-star"></i>
+              Today's Highlights
+            </h2>
+            <div class="highlight-cards">
+              <div class="highlight-card">
+                <p>
+                  <i class="fa-solid fa-temperature-half"></i>
+                  Feels Like
+                </p>
+                <h2 id="feels-like">30°C</h2>
+              </div>
+
+              <div class="highlight-card">
+                <p>
+                  <i class="fa-solid fa-cloud-rain"></i>
+                  Rain Chance
+                </p>
+                <h2 id="precipitation">0%</h2>
+              </div>
+
+              <div class="highlight-card">
+                <p>
+                  <i class="fa-solid fa-droplet"></i>
+                  Humidity
+                </p>
+                <h2 id="humidity">70%</h2>
+              </div>
+
+              <div class="highlight-card">
+                <p>
+                  <i class="fa-solid fa-wind"></i>
+                  Wind Speed
+                </p>
+                <h2 id="wind-speed">12 km/h</h2>
+              </div>
+
+              <div class="highlight-card">
+                <p>
+                  <i class="fa-solid fa-gauge-high"></i>
+                  Pressure
+                </p>
+                <h2 id="pressure">1012 hPa</h2>
+              </div>
+
+              <div class="highlight-card">
+                <p>
+                  <i class="fa-solid fa-eye"></i>
+                  Visibility
+                </p>
+                <h2 id="visibility">8 km</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="extra-cards">
+            <div class="sun-card">
+              <h2 class="section-title">Sunrise & Sunset</h2>
+              <div class="sun-times">
+                <span id="sunrise-time">6:00 AM</span>
+                <span id="sunset-time">6:00 PM</span>
+              </div>
+              <div class="sun-progress-wrapper">
+                <div class="sun-labels">
+                  <div class="sun-label">
+                    <i class="fa-solid fa-sun" id="left-sun-icon"></i
+                    ><span id="left-label">Sunrise</span>
+                  </div>
+                  <div class="sun-label">
+                    <span id="right-label">Sunset</span
+                    ><i class="fa-solid fa-moon" id="right-sun-icon"></i>
+                  </div>
+                </div>
+                <div class="sun-progress-bar">
+                  <div class="sun-progress" id="sun-progress"></div>
+                  <i class="fa-solid fa-sun" id="sun-icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="aqi-card">
+              <h2 class="section-title">
+                <i class="fa-solid fa-wind"></i>
+                Air Quality Index
+              </h2>
+              <div class="aqi-circle">
+                <svg class="aqi-svg" width="130" height="130">
+                  <circle class="aqi-bg" cx="65" cy="65" r="45"></circle>
+                  <circle
+                    class="aqi-progress"
+                    id="aqi-progress"
+                    cx="65"
+                    cy="65"
+                    r="45"
+                  ></circle>
+                </svg>
+                <div class="aqi-info"><h1 id="aqi-value">42</h1></div>
+              </div>
+              <p class="aqi-status-text" id="aqi-status">Good</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
